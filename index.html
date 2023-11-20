@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Introduction to My Class</title>
+    <title>Introduction to Statistics</title>
 </head>
 <body>
-    <h1>Welcome to My Class Notes</h1>
+    <h1>Welcome to My Class New Notes</h1>
     <p>This site will host my class notes.</p>
-    <h2>Here I like to mainly work on my notes of STAT 152</h2>
+
+    <div id="popupForm">
+      <form action="https://your-flask-app-url/chatbot" method="post">
+        <label for="message">Message:</label><br>
+        <input type="text" id="message" name="message"><br>
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+
+    <script>
+    window.onload = function() {
+      // Show the form when the page loads
+      document.getElementById('popupForm').style.display = 'block';
+
+      // Hide the form when the user clicks outside of it
+      window.onclick = function(event) {
+        if (event.target == document.getElementById('popupForm')) {
+          document.getElementById('popupForm').style.display = 'none';
+        }
+      };
+    };
+    </script>
+
 </body>
 </html>
