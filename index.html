@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Introduction to Statistics</title>
+    <title>Introduction to Statistics Notes</title>
+    <style>
+        #popupForm {
+            display: none;
+            position: fixed;
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid black;
+            z-index: 1000;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to My Class New Notes</h1>
     <p>This site will host my class notes.</p>
+
+    <div id="overlay"></div>
 
     <div id="popupForm">
       <form action="https://your-flask-app-url/chatbot" method="post">
@@ -19,12 +48,12 @@
     window.onload = function() {
       // Show the form when the page loads
       document.getElementById('popupForm').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
 
       // Hide the form when the user clicks outside of it
-      window.onclick = function(event) {
-        if (event.target == document.getElementById('popupForm')) {
-          document.getElementById('popupForm').style.display = 'none';
-        }
+      document.getElementById('overlay').onclick = function() {
+        document.getElementById('popupForm').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
       };
     };
     </script>
