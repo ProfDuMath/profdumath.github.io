@@ -16,7 +16,7 @@
     }
 
     window.onload = function() {
-      var myWindow = window.open("", "myWindow", "width=300,height=500");
+      var myWindow = window.open("Ask me questions.", "myWindow", "width=300,height=500");
       myWindow.document.write('<form action="https://your-flask-app-url/chatbot" method="post"><label for="message">Message:</label><br><input type="text" id="message" name="message"><br><input type="submit" value="Submit"></form>');
     }
 
