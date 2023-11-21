@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Introduction to My Class</title>
+    <title>Introduction to Statistics</title>
 </head>
 <body>
-    <h1>Welcome to My Class Notes</h1>
+    <h1>Welcome to My Class New Notes</h1>
     <p>This site will host my class notes.</p>
-    <h2>Here I like to mainly work on my notes of STAT 152</h2>
+
+    <button onclick="openPopup()">Open Popup</button>
+
+    <script>
+    function openPopup() {
+      var popup = window.open("", "Popup", "width=300,height=200");
+      popup.document.write('<form action="https://your-flask-app-url/chatbot" method="post"><label for="message">Message:</label><br><input type="text" id="message" name="message"><br><input type="submit" value="Submit"></form>');
+    }
+
+    window.onload = function() {
+      var myWindow = window.open("", "myWindow", "width=300,height=500");
+      myWindow.document.write('<form action="https://your-flask-app-url/chatbot" method="post"><label for="message">Message:</label><br><input type="text" id="message" name="message"><br><input type="submit" value="Submit"></form>');
+    }
+
+    </script>
+
 </body>
 </html>
